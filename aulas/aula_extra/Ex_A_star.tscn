@@ -1,0 +1,125 @@
+[gd_scene format=3 uid="uid://cvbhpkd2ey2ie"]
+
+[ext_resource type="PackedScene" uid="uid://cqcq5m0e8de7i" path="res://comum/locais/mapa_basico.tscn" id="1_62a5w"]
+[ext_resource type="Script" uid="uid://bw04ef0v0q1bq" path="res://aulas/aula_extra/controlador_jogo.gd" id="1_mdv1p"]
+[ext_resource type="PackedScene" uid="uid://ckq0wk1j0ial2" path="res://comum/sistemas/sistema_click_3d.tscn" id="2_e5w1p"]
+[ext_resource type="Texture2D" uid="uid://b6h76asiismqo" path="res://addons/kenney_prototype-textures/PNG/Dark/texture_06.png" id="2_qm8o2"]
+[ext_resource type="Texture2D" uid="uid://dsv0nh8x7fct3" path="res://addons/kenney_prototype-textures/PNG/Green/texture_07.png" id="3_6mckg"]
+[ext_resource type="Texture2D" uid="uid://binab6qidd8b3" path="res://addons/kenney_prototype-textures/PNG/Red/texture_07.png" id="4_mdv1p"]
+[ext_resource type="Texture2D" uid="uid://d3wi1yt3a6fu7" path="res://addons/kenney_prototype-textures/PNG/Purple/texture_07.png" id="5_e5w1p"]
+[ext_resource type="Texture2D" uid="uid://dmhpprgtj4toh" path="res://addons/kenney_prototype-textures/PNG/Light/texture_05.png" id="6_6l6f0"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eyady"]
+albedo_texture = ExtResource("2_qm8o2")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_xbrib"]
+material = SubResource("StandardMaterial3D_eyady")
+size = Vector2(1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fhrlm"]
+albedo_texture = ExtResource("3_6mckg")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_rfr7g"]
+material = SubResource("StandardMaterial3D_fhrlm")
+size = Vector2(1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_044ve"]
+albedo_texture = ExtResource("4_mdv1p")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_6mckg"]
+material = SubResource("StandardMaterial3D_044ve")
+size = Vector2(1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fvcb3"]
+albedo_texture = ExtResource("5_e5w1p")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_mdv1p"]
+material = SubResource("StandardMaterial3D_fvcb3")
+size = Vector2(1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4yncd"]
+albedo_texture = ExtResource("6_6l6f0")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_e5w1p"]
+material = SubResource("StandardMaterial3D_4yncd")
+size = Vector2(1, 1)
+
+[sub_resource type="MeshLibrary" id="MeshLibrary_smq05"]
+item/0/name = ""
+item/0/mesh = SubResource("PlaneMesh_xbrib")
+item/0/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+item/0/mesh_cast_shadow = 1
+item/0/shapes = []
+item/0/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+item/0/navigation_layers = 1
+item/1/name = ""
+item/1/mesh = SubResource("PlaneMesh_rfr7g")
+item/1/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+item/1/mesh_cast_shadow = 1
+item/1/shapes = []
+item/1/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+item/1/navigation_layers = 1
+item/2/name = ""
+item/2/mesh = SubResource("PlaneMesh_6mckg")
+item/2/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+item/2/mesh_cast_shadow = 1
+item/2/shapes = []
+item/2/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+item/2/navigation_layers = 1
+item/3/name = ""
+item/3/mesh = SubResource("PlaneMesh_mdv1p")
+item/3/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+item/3/mesh_cast_shadow = 1
+item/3/shapes = []
+item/3/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+item/3/navigation_layers = 1
+item/4/name = ""
+item/4/mesh = SubResource("PlaneMesh_e5w1p")
+item/4/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+item/4/mesh_cast_shadow = 1
+item/4/shapes = []
+item/4/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+item/4/navigation_layers = 1
+
+[node name="ExercicioAStar" type="Node3D" unique_id=1954627532]
+
+[node name="ControladorJogo" type="Node" parent="." unique_id=1468130311 node_paths=PackedStringArray("grid_map")]
+script = ExtResource("1_mdv1p")
+grid_map = NodePath("../GridMap")
+
+[node name="SistemaClick3d" parent="ControladorJogo" unique_id=719980625 node_paths=PackedStringArray("node_3d_space") instance=ExtResource("2_e5w1p")]
+node_3d_space = NodePath("../../GridMap")
+
+[node name="MapaBasico" parent="." unique_id=772933934 instance=ExtResource("1_62a5w")]
+
+[node name="Chao" parent="MapaBasico" index="2" unique_id=1693442064]
+visible = false
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=793347411]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 5, 7.5, -4.5)
+
+[node name="GridMap" type="GridMap" parent="." unique_id=157151063]
+mesh_library = SubResource("MeshLibrary_smq05")
+cell_size = Vector3(1, 1, 1)
+cell_center_y = false
+data = {
+"cells": PackedInt32Array(2, 65534, 0, 2, 65528, 0, 2, 65529, 0, 2, 65530, 0, 2, 65531, 0, 2, 65532, 0, 2, 65533, 0, 3, 65528, 0, 3, 65529, 0, 3, 65530, 2, 3, 65531, 0, 3, 65532, 0, 3, 65533, 0, 3, 65534, 0, 4, 65528, 0, 4, 65529, 0, 4, 65530, 0, 4, 65531, 0, 4, 65532, 0, 4, 65533, 0, 4, 65534, 0, 5, 65528, 0, 5, 65529, 0, 5, 65530, 0, 5, 65531, 0, 5, 65532, 0, 5, 65533, 0, 5, 65534, 1, 6, 65528, 0, 6, 65529, 0, 6, 65530, 0, 6, 65531, 3, 6, 65532, 0, 6, 65533, 0, 6, 65534, 0, 7, 65528, 0, 7, 65529, 0, 7, 65530, 0, 7, 65531, 0, 7, 65532, 0, 7, 65533, 0, 7, 65534, 0, 8, 65528, 0, 8, 65529, 0, 8, 65530, 0, 8, 65531, 0, 8, 65532, 0, 8, 65533, 4, 8, 65534, 0, 9, 65528, 0, 9, 65529, 0, 9, 65530, 0, 9, 65531, 0, 9, 65532, 0, 9, 65533, 0, 9, 65534, 0, 5, 65527, 0, 6, 65527, 0, 7, 65527, 0, 8, 65527, 0, 9, 65527, 0, 4, 65527, 0, 3, 65527, 0, 2, 65527, 0, 2, 65526, 0, 3, 65526, 0, 4, 65526, 0, 5, 65526, 0, 6, 65526, 0, 7, 65526, 0, 8, 65526, 0, 9, 65526, 0, 10, 65532, 0, 10, 65531, 0, 10, 65526, 0, 10, 65527, 0, 10, 65528, 0, 10, 65529, 0, 10, 65530, 0, 10, 65533, 0, 10, 65534, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, 6, 0, 0, 7, 0, 0, 8, 0, 0, 9, 0, 0, 10, 0, 0, 10, 65535, 0, 9, 65535, 0, 8, 65535, 0, 7, 65535, 0, 6, 65535, 0, 5, 65535, 0, 4, 65535, 0, 3, 65535, 0, 2, 65535, 0, 1, 0, 0, 1, 65535, 0, 1, 65534, 0, 1, 65533, 0, 1, 65532, 0, 1, 65531, 0, 1, 65530, 0, 1, 65529, 0, 1, 65528, 0, 1, 65527, 0, 1, 65526, 0, 0, 65526, 0, 0, 65527, 0, 0, 65528, 0, 0, 65529, 0, 0, 65530, 0, 0, 65531, 0, 0, 65532, 0, 0, 65533, 0, 0, 65534, 0, 0, 65535, 0, 0, 0, 0)
+}
+
+[node name="ItemListOpcoes" type="ItemList" parent="." unique_id=1402983821]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 9.0
+offset_top = -136.0
+offset_right = 206.0
+grow_vertical = 0
+item_count = 4
+item_0/text = "Início"
+item_1/text = "Fim"
+item_2/text = "Obstáculo"
+item_3/text = "Retirar"
+
+[connection signal="item_selected" from="ItemListOpcoes" to="ControladorJogo" method="_on_item_list_opcoes_item_selected"]
+
+[editable path="MapaBasico"]

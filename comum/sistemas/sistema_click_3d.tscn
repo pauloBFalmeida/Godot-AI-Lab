@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://ckq0wk1j0ial2"]
+
+[ext_resource type="Script" uid="uid://cn4ne8q4jy33q" path="res://comum/sistemas/sistema_click_3d.gd" id="1_gc6rd"]
+
+[node name="SistemaClick3d" type="Node" unique_id=719980625]
+script = ExtResource("1_gc6rd")
