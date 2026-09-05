@@ -52,8 +52,9 @@ func A_Star(inicio: AStarNodo, fim: AStarNodo,
 			if nodo_vizinho in lista_fechados:
 				continue
 			# se nao
-			# calcula a tentativa de custo g (g do nodo atual + h(nodo atual ate fim)
-			var tentativa_g : int = nodo_atual.g + heuristica.call(nodo_atual, fim)
+			# calcula a tentativa de custo g 
+			# g do nodo atual + distancia(nodo atual ate vizinho)
+			var tentativa_g : int = nodo_atual.g + nodo_atual.conexoes[nodo_vizinho]
 			
 			# adiciona o vizinho a lista de abertos (se nao estiver)
 			if nodo_vizinho not in lista_abertos:
