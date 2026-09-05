@@ -1,0 +1,161 @@
+[gd_scene format=3 uid="uid://cvbhpkd2ey2ie"]
+
+[ext_resource type="PackedScene" uid="uid://cqcq5m0e8de7i" path="res://comum/locais/mapa_basico.tscn" id="1_62a5w"]
+[ext_resource type="Script" uid="uid://bw04ef0v0q1bq" path="res://aulas/aula_extra/AStarGrid/controlador_jogo.gd" id="1_mdv1p"]
+[ext_resource type="PackedScene" uid="uid://ckq0wk1j0ial2" path="res://comum/sistemas/sistema_click_3d.tscn" id="2_e5w1p"]
+[ext_resource type="PackedScene" uid="uid://cvnlhg1cifyma" path="res://aulas/aula_extra/AStarGrid/partes/tile_mesh.tscn" id="9_6l6f0"]
+
+[sub_resource type="Gradient" id="Gradient_eyady"]
+interpolation_mode = 2
+colors = PackedColorArray(0.40470585, 0.5722286, 0.90980256, 1, 5.2943824e-07, 0.20504037, 0.55509436, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_eyady"]
+gradient = SubResource("Gradient_eyady")
+
+[node name="ExercicioAStar" type="Node3D" unique_id=1954627532]
+
+[node name="ControladorJogo" type="Node" parent="." unique_id=1468130311 node_paths=PackedStringArray("pai_tiles")]
+script = ExtResource("1_mdv1p")
+tamanho_grid = Vector2i(18, 11)
+pai_tiles = NodePath("../Tiles")
+tile_base = ExtResource("9_6l6f0")
+cor_gradiente = SubResource("GradientTexture1D_eyady")
+cor_nao_visto = Color(0.18666668, 0, 0.4, 1)
+
+[node name="SistemaClick3d" parent="ControladorJogo" unique_id=719980625 instance=ExtResource("2_e5w1p")]
+
+[node name="Controles" type="Control" parent="ControladorJogo" unique_id=1363919900]
+layout_mode = 3
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -342.0
+offset_right = 177.0
+grow_vertical = 0
+
+[node name="ItemListOpcoes" type="ItemList" parent="ControladorJogo/Controles" unique_id=1402983821]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 9.0
+offset_top = -329.0
+offset_right = 158.0
+offset_bottom = -204.0
+grow_vertical = 0
+item_count = 4
+item_0/text = "Início"
+item_1/text = "Fim"
+item_2/text = "Obstáculo"
+item_3/text = "Retirar"
+
+[node name="CheckButtonMostrarValores" type="CheckButton" parent="ControladorJogo/Controles" unique_id=1924557037]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 9.0
+offset_top = -202.0
+offset_right = 165.0
+offset_bottom = -174.0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 14
+button_pressed = true
+text = "Mostrar Valores"
+
+[node name="ButtonExecutarAStar" type="Button" parent="ControladorJogo/Controles" unique_id=364135260]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = -168.0
+offset_right = 153.0
+offset_bottom = -137.0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.50196564, 0.99999994, 0.6706841, 1)
+text = "Executar A*"
+
+[node name="ButtonLimparCaminho" type="Button" parent="ControladorJogo/Controles" unique_id=340534832]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = -120.0
+offset_right = 153.0
+offset_bottom = -89.0
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 0.755, 0.65, 1)
+text = "Limpar Caminho"
+
+[node name="ButtonRetirarTudo" type="Button" parent="ControladorJogo/Controles" unique_id=995241310]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = -48.0
+offset_right = 153.0
+offset_bottom = -17.0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.9999979, 0.5224284, 0.54979885, 1)
+text = "Retirar Tudo"
+
+[node name="Ajustes" type="VBoxContainer" parent="ControladorJogo" unique_id=1374610086]
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 174.0
+offset_bottom = 312.0
+
+[node name="LabelTit" type="Label" parent="ControladorJogo/Ajustes" unique_id=1467856391]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.93, 0.93, 0.93, 1)
+text = "Distância entre Tiles"
+
+[node name="LabelLat" type="Label" parent="ControladorJogo/Ajustes" unique_id=325892903]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8, 0.8, 0.8, 1)
+text = "Lateral:"
+
+[node name="SpinBoxLateral" type="SpinBox" parent="ControladorJogo/Ajustes" unique_id=2063776580]
+layout_mode = 2
+max_value = 5.0
+rounded = true
+allow_greater = true
+
+[node name="LabelDiag" type="Label" parent="ControladorJogo/Ajustes" unique_id=46561078]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8, 0.8, 0.8, 1)
+text = "Diagonal:"
+
+[node name="SpinBoxDiagonal" type="SpinBox" parent="ControladorJogo/Ajustes" unique_id=983454004]
+layout_mode = 2
+max_value = 5.0
+rounded = true
+allow_greater = true
+
+[node name="MapaBasico" parent="." unique_id=772933934 instance=ExtResource("1_62a5w")]
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=793347411]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 8, 7.5, -5.5)
+projection = 1
+size = 11.294
+
+[node name="Tiles" type="Node3D" parent="." unique_id=1517533266]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.01, -0.5)
+
+[node name="TileMesh" parent="Tiles" unique_id=1937237241 instance=ExtResource("9_6l6f0")]
+
+[node name="TileMesh2" parent="Tiles" unique_id=461980415 instance=ExtResource("9_6l6f0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -1)
+
+[connection signal="item_selected" from="ControladorJogo/Controles/ItemListOpcoes" to="ControladorJogo" method="_on_item_list_opcoes_item_selected"]
+[connection signal="toggled" from="ControladorJogo/Controles/CheckButtonMostrarValores" to="ControladorJogo" method="_on_check_button_mostrar_valores_toggled"]
+[connection signal="pressed" from="ControladorJogo/Controles/ButtonExecutarAStar" to="ControladorJogo" method="_on_button_executar_a_star_pressed"]
+[connection signal="pressed" from="ControladorJogo/Controles/ButtonLimparCaminho" to="ControladorJogo" method="_on_button_limpar_caminho_pressed"]
+[connection signal="pressed" from="ControladorJogo/Controles/ButtonRetirarTudo" to="ControladorJogo" method="_on_button_retirar_tudo_pressed"]
+[connection signal="value_changed" from="ControladorJogo/Ajustes/SpinBoxLateral" to="ControladorJogo" method="_on_spin_box_lateral_value_changed"]
+[connection signal="value_changed" from="ControladorJogo/Ajustes/SpinBoxDiagonal" to="ControladorJogo" method="_on_spin_box_diagonal_value_changed"]
+
+[editable path="MapaBasico"]

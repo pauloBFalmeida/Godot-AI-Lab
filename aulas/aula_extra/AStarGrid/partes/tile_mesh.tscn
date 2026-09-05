@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://cvnlhg1cifyma"]
+
+[ext_resource type="Script" uid="uid://1gwvmabfpgij" path="res://aulas/aula_extra/AStarGrid/partes/tile_mesh.gd" id="1_4a05r"]
+[ext_resource type="Texture2D" uid="uid://dhj305d1mmf52" path="res://addons/kenney_prototype-textures/PNG/Light/texture_01.png" id="1_lh8x8"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_smq05"]
+orientation = 1
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4a05r"]
+albedo_color = Color(0.5, 0.5, 0.5, 1)
+albedo_texture = ExtResource("1_lh8x8")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gyq70"]
+albedo_color = Color(0.4, 0.4, 0.4, 1)
+albedo_texture = ExtResource("1_lh8x8")
+
+[node name="TileMesh" type="Node3D" unique_id=1937237241]
+script = ExtResource("1_4a05r")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=934812341]
+transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, 0, 0.01, 0)
+mesh = SubResource("QuadMesh_smq05")
+surface_material_override/0 = SubResource("StandardMaterial3D_4a05r")
+
+[node name="MeshInstance3DBack" type="MeshInstance3D" parent="." unique_id=896525450]
+mesh = SubResource("QuadMesh_smq05")
+surface_material_override/0 = SubResource("StandardMaterial3D_gyq70")
+
+[node name="Label3D" type="Label3D" parent="." unique_id=479132897]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
+billboard = 1
+text = "g = 120
+h = 123
+f = 230"

@@ -4,6 +4,9 @@ extends AStar
 ## Dicionario para dada posicao (Vector2i) retorna o nodo presente em todos_nodos, com a dada posicao
 var posicoes_nodos : Dictionary[Vector2i, AStarNodo2D] = {}
 
+var distancia_lateral : int = 1
+var distancia_diagonal: int = 2
+
 ## Ajusta os nodos para o algoritmo do A Star
 ## [br] [code]todas_posicoes_validas: Array[Vector2i][/code]
 ## lista posicoes que nao sao obstrucoes, (vazias, inicio, fim)
@@ -23,7 +26,7 @@ func ajustar_nodos(todas_posicoes_validas: Array[Vector2i]) -> void:
 			# se existe nodo com essa posicao, entao salve a conexao
 			if posicoes_nodos.has(vizinho_pos):
 				var nodo_vizinho: AStarNodo2D = posicoes_nodos[vizinho_pos]
-				# peso da conexao, 1 se for lateral, 2 diagonal
+				# peso da conexao, depende se for lateral ou diagonal
 				var peso_conexao: int =  vizinho_pos_dist[vizinho_pos]
 				# adiciona a conexao no nodo
 				nodo.add_conexao(nodo_vizinho, peso_conexao)
@@ -86,9 +89,9 @@ func get_posicao_vizinhos_dist(posicao: Vector2i) -> Dictionary[Vector2i, int]:
 	
 	var posicoes_dist : Dictionary[Vector2i, int] = {}
 	for pos: Vector2i in pos_vizinhos_lateral:
-		posicoes_dist[pos] = 1
+		posicoes_dist[pos] = distancia_lateral
 	for pos: Vector2i in pos_vizinhos_diagonal:
-		posicoes_dist[pos] = 2
+		posicoes_dist[pos] = distancia_diagonal
 	return posicoes_dist
 
 func caminho_nodos_para_posicoes(caminho_nodos: Array[AStarNodo2D]) -> Array[Vector2i]:
