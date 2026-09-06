@@ -15,8 +15,8 @@ extends CharacterBody3D
 
 var material: Material
 
-var mover_velocidade: float = 0.0
-var mover_direcao := Vector3.ZERO
+var movimento_velocidade: float = 0.0
+var movimento_direcao := Vector3.ZERO
 
 func _ready() -> void:
 	_ready_cor()
@@ -40,7 +40,7 @@ func _ready_cor() -> void:
 
 func _physics_process(delta: float) -> void:
 	# se move na direcao passada
-	velocity = mover_direcao * mover_velocidade
+	velocity = movimento_direcao * movimento_velocidade
 	
 	# Add the gravity.
 	if not is_on_floor():
@@ -55,13 +55,13 @@ func mover(direcao: Vector3, velocidade: float) -> void:
 	if not direcao.is_zero_approx():
 		look_at(global_position + direcao, Vector3.UP)
 	# atualiza os valores para se mover
-	mover_velocidade = velocidade
-	mover_direcao    = direcao
+	movimento_velocidade = velocidade
+	movimento_direcao    = direcao
 
 ## Para o movimento do personagem
-func 	parar_mover() -> void:
-	mover_velocidade = 0
-	mover_direcao    = Vector3.ZERO
+func parar_mover() -> void:
+	movimento_velocidade = 0
+	movimento_direcao    = Vector3.ZERO
 
 
 ## Move o personagem na direcao de objeto (Node3D), com velocidade
