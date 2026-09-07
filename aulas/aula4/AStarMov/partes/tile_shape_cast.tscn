@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b8ci056an88s2"]
 
-[ext_resource type="PackedScene" uid="uid://cvnlhg1cifyma" path="res://aulas/aula_extra/AStarGrid/partes/tile_mesh.tscn" id="1_v0o2q"]
-[ext_resource type="Script" uid="uid://dt5y41omjav0g" path="res://aulas/aula_extra/AStarMov/partes/tile_shape_cast.gd" id="2_v8q46"]
+[ext_resource type="PackedScene" uid="uid://cvnlhg1cifyma" path="res://aulas/aula4/AStarGrid/partes/tile_mesh.tscn" id="1_v0o2q"]
+[ext_resource type="Script" uid="uid://dt5y41omjav0g" path="res://aulas/aula4/AStarMov/partes/tile_shape_cast.gd" id="2_v8q46"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_bcvxq"]
 size = Vector3(0.9, 0.9, 0.9)

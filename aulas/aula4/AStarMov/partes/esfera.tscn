@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dwj08gehjlh74"]
 
-[ext_resource type="Script" uid="uid://csqihkocy0pxn" path="res://aulas/aula_extra/AStarMov/partes/esfera.gd" id="1_v58hw"]
+[ext_resource type="Script" uid="uid://csqihkocy0pxn" path="res://aulas/aula4/AStarMov/partes/esfera.gd" id="1_v58hw"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_smq05"]
 radius = 2.0

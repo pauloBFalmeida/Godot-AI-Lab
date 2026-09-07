@@ -1,12 +1,12 @@
 [gd_scene format=3 uid="uid://mct33bgiywp"]
 
-[ext_resource type="Script" uid="uid://esifecq8apmf" path="res://aulas/aula_extra/AStarMov/partes/gerenciador_a_star_mov.gd" id="1_n1041"]
+[ext_resource type="Script" uid="uid://esifecq8apmf" path="res://aulas/aula4/AStarMov/partes/gerenciador_a_star_mov.gd" id="1_n1041"]
 [ext_resource type="PackedScene" uid="uid://cqcq5m0e8de7i" path="res://comum/locais/mapa_basico.tscn" id="1_nv51o"]
 [ext_resource type="PackedScene" uid="uid://ckq0wk1j0ial2" path="res://comum/sistemas/sistema_click_3d.tscn" id="2_b1jlx"]
 [ext_resource type="Script" uid="uid://8vyuhyx0xogt" path="res://addons/freecam_3D/freecam.gd" id="2_fgwhm"]
-[ext_resource type="PackedScene" uid="uid://bmea56nrvjshv" path="res://aulas/aula_extra/AStarGrid/partes/grid_tiles.tscn" id="5_apckv"]
-[ext_resource type="PackedScene" uid="uid://dwj08gehjlh74" path="res://aulas/aula_extra/AStarMov/partes/esfera.tscn" id="7_i8bwt"]
-[ext_resource type="PackedScene" uid="uid://b8ci056an88s2" path="res://aulas/aula_extra/AStarMov/partes/tile_shape_cast.tscn" id="7_x76mg"]
+[ext_resource type="PackedScene" uid="uid://bmea56nrvjshv" path="res://aulas/aula4/AStarGrid/partes/grid_tiles.tscn" id="5_apckv"]
+[ext_resource type="PackedScene" uid="uid://dwj08gehjlh74" path="res://aulas/aula4/AStarMov/partes/esfera.tscn" id="7_i8bwt"]
+[ext_resource type="PackedScene" uid="uid://b8ci056an88s2" path="res://aulas/aula4/AStarMov/partes/tile_shape_cast.tscn" id="7_x76mg"]
 [ext_resource type="PackedScene" uid="uid://bwrvtw1xiwb43" path="res://comum/personagem/personagem_andar.tscn" id="8_b1jlx"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_smq05"]

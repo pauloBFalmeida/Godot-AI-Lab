@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://cvbhpkd2ey2ie"]
 
 [ext_resource type="PackedScene" uid="uid://cqcq5m0e8de7i" path="res://comum/locais/mapa_basico.tscn" id="1_62a5w"]
-[ext_resource type="Script" uid="uid://bw04ef0v0q1bq" path="res://aulas/aula_extra/AStarGrid/gerenciador_a_star_grid.gd" id="1_mdv1p"]
+[ext_resource type="Script" uid="uid://bw04ef0v0q1bq" path="res://aulas/aula4/AStarGrid/partes/gerenciador_a_star_grid.gd" id="1_mdv1p"]
 [ext_resource type="PackedScene" uid="uid://ckq0wk1j0ial2" path="res://comum/sistemas/sistema_click_3d.tscn" id="2_e5w1p"]
-[ext_resource type="PackedScene" uid="uid://bmea56nrvjshv" path="res://aulas/aula_extra/AStarGrid/partes/grid_tiles.tscn" id="4_a0x5e"]
-[ext_resource type="PackedScene" uid="uid://cvnlhg1cifyma" path="res://aulas/aula_extra/AStarGrid/partes/tile_mesh.tscn" id="9_6l6f0"]
+[ext_resource type="PackedScene" uid="uid://bmea56nrvjshv" path="res://aulas/aula4/AStarGrid/partes/grid_tiles.tscn" id="4_a0x5e"]
+[ext_resource type="PackedScene" uid="uid://cvnlhg1cifyma" path="res://aulas/aula4/AStarGrid/partes/tile_mesh.tscn" id="9_6l6f0"]
 
 [sub_resource type="Gradient" id="Gradient_eyady"]
 interpolation_mode = 2

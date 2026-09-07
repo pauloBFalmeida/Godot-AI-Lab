@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cvnlhg1cifyma"]
 
-[ext_resource type="Script" uid="uid://1gwvmabfpgij" path="res://aulas/aula_extra/AStarGrid/partes/tile_mesh.gd" id="1_4a05r"]
+[ext_resource type="Script" uid="uid://1gwvmabfpgij" path="res://aulas/aula4/AStarGrid/partes/tile_mesh.gd" id="1_4a05r"]
 [ext_resource type="Texture2D" uid="uid://dhj305d1mmf52" path="res://addons/kenney_prototype-textures/PNG/Light/texture_01.png" id="1_lh8x8"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_smq05"]
