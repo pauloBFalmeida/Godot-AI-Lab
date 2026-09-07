@@ -1,0 +1,161 @@
+[gd_scene format=3 uid="uid://mct33bgiywp"]
+
+[ext_resource type="Script" uid="uid://esifecq8apmf" path="res://aulas/aula_extra/AStarMov/partes/gerenciador_a_star_mov.gd" id="1_n1041"]
+[ext_resource type="PackedScene" uid="uid://cqcq5m0e8de7i" path="res://comum/locais/mapa_basico.tscn" id="1_nv51o"]
+[ext_resource type="PackedScene" uid="uid://ckq0wk1j0ial2" path="res://comum/sistemas/sistema_click_3d.tscn" id="2_b1jlx"]
+[ext_resource type="Script" uid="uid://8vyuhyx0xogt" path="res://addons/freecam_3D/freecam.gd" id="2_fgwhm"]
+[ext_resource type="PackedScene" uid="uid://bmea56nrvjshv" path="res://aulas/aula_extra/AStarGrid/partes/grid_tiles.tscn" id="5_apckv"]
+[ext_resource type="PackedScene" uid="uid://dwj08gehjlh74" path="res://aulas/aula_extra/AStarMov/partes/esfera.tscn" id="7_i8bwt"]
+[ext_resource type="PackedScene" uid="uid://b8ci056an88s2" path="res://aulas/aula_extra/AStarMov/partes/tile_shape_cast.tscn" id="7_x76mg"]
+[ext_resource type="PackedScene" uid="uid://bwrvtw1xiwb43" path="res://comum/personagem/personagem_andar.tscn" id="8_b1jlx"]
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_smq05"]
+plane = Plane(1, 0, 0, 0)
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_pimw4"]
+plane = Plane(0, 0, -1, 0)
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_i8bwt"]
+plane = Plane(-1, 0, 0, 0)
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_b1jlx"]
+plane = Plane(0, 0, 1, 0)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_u6ok8"]
+size = Vector3(2, 1, 9)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_smq05"]
+albedo_color = Color(0.82920915, 0.42788282, 0.5245789, 1)
+roughness = 0.2
+
+[node name="ExercicioAStarMovimento" type="Node3D" unique_id=1658873906]
+
+[node name="GerenciadorAStarMov" type="Node" parent="." unique_id=1683405096 node_paths=PackedStringArray("lista_esferas", "personagem_andar")]
+script = ExtResource("1_n1041")
+esfera_ref = ExtResource("7_i8bwt")
+lista_esferas = [NodePath("../Obstaculos/Esfera"), NodePath("../Obstaculos/Esfera2"), NodePath("../Obstaculos/Esfera3")]
+personagem_andar = NodePath("../PersonagemAndar")
+
+[node name="SistemaClick3d" parent="GerenciadorAStarMov" unique_id=719980625 instance=ExtResource("2_b1jlx")]
+
+[node name="LabelQtdEsferas" type="Label" parent="GerenciadorAStarMov" unique_id=1537716101]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 6.0
+offset_top = -96.0
+offset_right = 208.0
+offset_bottom = -47.0
+grow_vertical = 0
+text = "Quantidade 
+de Esferas:"
+
+[node name="SpinBoxQtdEsferas" type="SpinBox" parent="GerenciadorAStarMov" unique_id=1790829651]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 6.0
+offset_top = -39.0
+offset_right = 92.5
+offset_bottom = -8.0
+grow_vertical = 0
+max_value = 10.0
+rounded = true
+allow_greater = true
+
+[node name="MapaBasico" parent="." unique_id=772933934 instance=ExtResource("1_nv51o")]
+
+[node name="Freecam3D" type="Camera3D" parent="." unique_id=1383869492]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 26, 21, -14)
+script = ExtResource("2_fgwhm")
+metadata/_custom_type_script = "uid://8vyuhyx0xogt"
+
+[node name="PersonagemAndar" parent="." unique_id=1405902387 instance=ExtResource("8_b1jlx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -2)
+
+[node name="GridTiles" parent="." unique_id=1117744641 instance=ExtResource("5_apckv")]
+tamanho_grid = Vector2i(48, 27)
+tile_base = ExtResource("7_x76mg")
+
+[node name="TileShapeCast" parent="GridTiles" unique_id=1937237241 instance=ExtResource("7_x76mg")]
+
+[node name="TileShapeCast2" parent="GridTiles" unique_id=1671090964 instance=ExtResource("7_x76mg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48, 0, -27)
+
+[node name="Paredes" type="Node3D" parent="." unique_id=52589963]
+
+[node name="StaticBodyOrigX" type="StaticBody3D" parent="Paredes" unique_id=1129938260]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Paredes/StaticBodyOrigX" unique_id=19111953]
+shape = SubResource("WorldBoundaryShape3D_smq05")
+
+[node name="StaticBodyOrigY" type="StaticBody3D" parent="Paredes" unique_id=1730847434]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Paredes/StaticBodyOrigY" unique_id=2015965383]
+shape = SubResource("WorldBoundaryShape3D_pimw4")
+
+[node name="StaticBodyEndX" type="StaticBody3D" parent="Paredes" unique_id=1299038445]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 49, 0, -28)
+visible = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Paredes/StaticBodyEndX" unique_id=918402615]
+shape = SubResource("WorldBoundaryShape3D_i8bwt")
+
+[node name="StaticBodyEndY" type="StaticBody3D" parent="Paredes" unique_id=1009808292]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 49, 0, -28)
+visible = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Paredes/StaticBodyEndY" unique_id=1079804397]
+shape = SubResource("WorldBoundaryShape3D_b1jlx")
+
+[node name="Obstaculos" type="Node3D" parent="." unique_id=975065789]
+
+[node name="Esfera" parent="Obstaculos" unique_id=941231882 instance=ExtResource("7_i8bwt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, -10)
+
+[node name="Esfera2" parent="Obstaculos" unique_id=1397218641 instance=ExtResource("7_i8bwt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, -19)
+
+[node name="Esfera3" parent="Obstaculos" unique_id=252248988 instance=ExtResource("7_i8bwt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45, 0, -20)
+
+[node name="Box" type="StaticBody3D" parent="Obstaculos" unique_id=1096877745]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 0, -12)
+collision_layer = 9
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstaculos/Box" unique_id=653145212]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_u6ok8")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Obstaculos/Box" unique_id=587082070]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+size = Vector3(2, 1, 9)
+material = SubResource("StandardMaterial3D_smq05")
+
+[node name="Box2" type="StaticBody3D" parent="Obstaculos" unique_id=32786451]
+transform = Transform3D(0.8660254, 0, -0.5, 0, 1, 0, 0.5, 0, 0.8660254, 10, 0, -17)
+collision_layer = 9
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstaculos/Box2" unique_id=1888040867]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_u6ok8")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Obstaculos/Box2" unique_id=160753847]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+size = Vector3(2, 1, 9)
+material = SubResource("StandardMaterial3D_smq05")
+
+[node name="Box3" type="StaticBody3D" parent="Obstaculos" unique_id=401011941]
+transform = Transform3D(-2.9802322e-08, 0, 0.9999999, 0, 1, 0, -0.9999999, 0, -2.9802322e-08, 18, 0, -7)
+collision_layer = 9
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstaculos/Box3" unique_id=343658859]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_u6ok8")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Obstaculos/Box3" unique_id=1102499207]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+size = Vector3(2, 1, 9)
+material = SubResource("StandardMaterial3D_smq05")
+
+[connection signal="value_changed" from="GerenciadorAStarMov/SpinBoxQtdEsferas" to="GerenciadorAStarMov" method="_on_spin_box_qtd_esferas_value_changed"]

@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://dwj08gehjlh74"]
+
+[ext_resource type="Script" uid="uid://csqihkocy0pxn" path="res://aulas/aula_extra/AStarMov/partes/esfera.gd" id="1_v58hw"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_smq05"]
+radius = 2.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u6ok8"]
+shading_mode = 2
+albedo_color = Color(0.6999377, 0.51937205, 1, 1)
+roughness = 0.3
+
+[node name="Esfera" type="CharacterBody3D" unique_id=941231882]
+collision_layer = 9
+axis_lock_linear_y = true
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
+script = ExtResource("1_v58hw")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1216206037]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+shape = SubResource("SphereShape3D_smq05")
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="." unique_id=1400524002]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+radius = 2.0
+radial_segments = 24
+rings = 12
+material = SubResource("StandardMaterial3D_u6ok8")
