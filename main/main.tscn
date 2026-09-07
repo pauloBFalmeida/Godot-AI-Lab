@@ -1,7 +1,11 @@
 [gd_scene format=3 uid="uid://tttv8duftpic"]
 
 [ext_resource type="Script" uid="uid://cviub1fdx6jjt" path="res://main/main.gd" id="1_53q0u"]
-[ext_resource type="Resource" uid="uid://dj6270xrfkw4m" path="res://main/exercicios.tres" id="2_pjrb6"]
+[ext_resource type="Script" uid="uid://t8352e0s4w8b" path="res://main/exercicio_res.gd" id="2_xwkvk"]
+[ext_resource type="Resource" uid="uid://b885ovi231yc7" path="res://main/exercicios/aula2.tres" id="3_kfbq2"]
+[ext_resource type="PackedScene" uid="uid://dw4c2ld2el5hx" path="res://main/v_box_item.tscn" id="3_xwkvk"]
+[ext_resource type="Resource" uid="uid://cfmp3f20g3085" path="res://main/exercicios/aula3.tres" id="4_4dugh"]
+[ext_resource type="Resource" uid="uid://do1trijcw1w04" path="res://main/exercicios/aula4.tres" id="5_67ri8"]
 
 [node name="Main" type="Control" unique_id=1479390267]
 layout_mode = 3
@@ -11,7 +15,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_53q0u")
-exercicios_res = ExtResource("2_pjrb6")
+exercicios_res = Array[ExtResource("2_xwkvk")]([ExtResource("3_kfbq2"), ExtResource("4_4dugh"), ExtResource("5_67ri8")])
 
 [node name="background" type="ColorRect" parent="." unique_id=337283492]
 layout_mode = 1
@@ -69,20 +73,29 @@ anchors_preset = 14
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_top = -172.0
-offset_bottom = 172.0
+offset_left = -246.0
+offset_top = -144.0
+offset_right = 246.0
+offset_bottom = 144.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="GridContainer" type="GridContainer" parent="MeioSize/GridSize" unique_id=2094877192]
+[node name="ScrollContainer" type="ScrollContainer" parent="MeioSize/GridSize" unique_id=1279415429]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/h_separation = 15
-theme_override_constants/v_separation = 20
-columns = 5
+vertical_scroll_mode = 0
+scroll_horizontal_by_default = true
+
+[node name="HBoxItens" type="HBoxContainer" parent="MeioSize/GridSize/ScrollContainer" unique_id=1331632483]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="VBoxTema" parent="MeioSize/GridSize/ScrollContainer/HBoxItens" unique_id=1773773915 instance=ExtResource("3_xwkvk")]
+layout_mode = 2
 
 [connection signal="pressed" from="MeioSize/ButtonSair" to="." method="_on_button_sair_pressed"]

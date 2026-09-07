@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://dw4c2ld2el5hx"]
+
+[node name="VBoxItem" type="VBoxContainer" unique_id=1773773915]
+theme_override_constants/separation = 20
+
+[node name="LabelTitutlo" type="Label" parent="." unique_id=646630260]
+layout_mode = 2
+text = "Aula ?"
+horizontal_alignment = 1
