@@ -3,7 +3,14 @@
 [node name="VBoxItem" type="VBoxContainer" unique_id=1773773915]
 theme_override_constants/separation = 20
 
-[node name="LabelTitutlo" type="Label" parent="." unique_id=646630260]
+[node name="LabelTitulo" type="Label" parent="." unique_id=646630260]
 layout_mode = 2
+theme_override_font_sizes/font_size = 20
 text = "Aula ?"
+horizontal_alignment = 1
+
+[node name="LabelSubTitulo" type="Label" parent="." unique_id=1792096429]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "Descricao ?"
 horizontal_alignment = 1

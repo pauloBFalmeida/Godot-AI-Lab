@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="AulaRes" format=3 uid="uid://cvjw67aednoi4"]
+
+[ext_resource type="Script" uid="uid://t8352e0s4w8b" path="res://main/exercicios/exercicio_res.gd" id="1_gwfyg"]
+[ext_resource type="Resource" uid="uid://cq0qaevqjorb4" path="res://main/exercicios/aula3/aula3_exercicio_fsm_bt.tres" id="2_i6c1u"]
+[ext_resource type="Script" uid="uid://bn0bxsit4llqp" path="res://main/exercicios/aula_res.gd" id="3_xoujs"]
+
+[resource]
+script = ExtResource("3_xoujs")
+titulo = "Aula 3 - FSM vs BT"
+sub_titulo = "Finite State Machine
+vs BehaviorTree"
+cenas_exercicios = Array[ExtResource("1_gwfyg")]([ExtResource("2_i6c1u")])
+metadata/_custom_type_script = "uid://bn0bxsit4llqp"

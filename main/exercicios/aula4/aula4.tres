@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="AulaRes" format=3 uid="uid://diglvopraqmy0"]
+
+[ext_resource type="Script" uid="uid://t8352e0s4w8b" path="res://main/exercicios/exercicio_res.gd" id="1_dfl46"]
+[ext_resource type="Resource" uid="uid://25pbfl780uo1" path="res://main/exercicios/aula4/aula4_exercicio_grid.tres" id="2_vpiet"]
+[ext_resource type="Resource" uid="uid://cno41qtp23e15" path="res://main/exercicios/aula4/aula4_exercicio_mov.tres" id="3_ctuvm"]
+[ext_resource type="Script" uid="uid://bn0bxsit4llqp" path="res://main/exercicios/aula_res.gd" id="3_f1y4e"]
+
+[resource]
+script = ExtResource("3_f1y4e")
+titulo = "Aula 4 - A*"
+sub_titulo = "Algorítmo de pathfinding A*"
+cenas_exercicios = Array[ExtResource("1_dfl46")]([ExtResource("2_vpiet"), ExtResource("3_ctuvm")])
+metadata/_custom_type_script = "uid://bn0bxsit4llqp"

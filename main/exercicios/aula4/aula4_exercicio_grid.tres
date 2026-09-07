@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ExercicioRes" format=3 uid="uid://25pbfl780uo1"]
+
+[ext_resource type="PackedScene" uid="uid://cvbhpkd2ey2ie" path="res://aulas/aula4/AStarGrid/Ex_A_star.tscn" id="1_8hlyg"]
+[ext_resource type="Script" uid="uid://t8352e0s4w8b" path="res://main/exercicios/exercicio_res.gd" id="2_rvmdx"]
+
+[resource]
+script = ExtResource("2_rvmdx")
+nome = "Grid A*"
+cena = ExtResource("1_8hlyg")
+metadata/_custom_type_script = "uid://t8352e0s4w8b"

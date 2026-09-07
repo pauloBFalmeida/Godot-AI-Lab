@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://tttv8duftpic"]
 
 [ext_resource type="Script" uid="uid://cviub1fdx6jjt" path="res://main/main.gd" id="1_53q0u"]
-[ext_resource type="Script" uid="uid://t8352e0s4w8b" path="res://main/exercicio_res.gd" id="2_xwkvk"]
-[ext_resource type="Resource" uid="uid://b885ovi231yc7" path="res://main/exercicios/aula2.tres" id="3_kfbq2"]
+[ext_resource type="Script" uid="uid://bn0bxsit4llqp" path="res://main/exercicios/aula_res.gd" id="2_kfbq2"]
+[ext_resource type="Resource" uid="uid://dsrk0slwiigd6" path="res://main/exercicios/aula2/aula2.tres" id="3_4dugh"]
 [ext_resource type="PackedScene" uid="uid://dw4c2ld2el5hx" path="res://main/v_box_item.tscn" id="3_xwkvk"]
-[ext_resource type="Resource" uid="uid://cfmp3f20g3085" path="res://main/exercicios/aula3.tres" id="4_4dugh"]
-[ext_resource type="Resource" uid="uid://do1trijcw1w04" path="res://main/exercicios/aula4.tres" id="5_67ri8"]
+[ext_resource type="Resource" uid="uid://cvjw67aednoi4" path="res://main/exercicios/aula3/aula3.tres" id="4_67ri8"]
+[ext_resource type="Resource" uid="uid://diglvopraqmy0" path="res://main/exercicios/aula4/aula4.tres" id="5_grrlh"]
 
 [node name="Main" type="Control" unique_id=1479390267]
 layout_mode = 3
@@ -15,7 +15,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_53q0u")
-exercicios_res = Array[ExtResource("2_xwkvk")]([ExtResource("3_kfbq2"), ExtResource("4_4dugh"), ExtResource("5_67ri8")])
+lista_aulas_res = Array[ExtResource("2_kfbq2")]([ExtResource("3_4dugh"), ExtResource("4_67ri8"), ExtResource("5_grrlh")])
 
 [node name="background" type="ColorRect" parent="." unique_id=337283492]
 layout_mode = 1

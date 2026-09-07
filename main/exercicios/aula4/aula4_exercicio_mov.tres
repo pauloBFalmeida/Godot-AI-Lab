@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ExercicioRes" format=3 uid="uid://cno41qtp23e15"]
+
+[ext_resource type="PackedScene" uid="uid://mct33bgiywp" path="res://aulas/aula4/AStarMov/Ex_A_star_Movimento.tscn" id="1_ujoxh"]
+[ext_resource type="Script" uid="uid://t8352e0s4w8b" path="res://main/exercicios/exercicio_res.gd" id="2_xxwao"]
+
+[resource]
+script = ExtResource("2_xxwao")
+nome = "Movimentação com A*"
+cena = ExtResource("1_ujoxh")
+metadata/_custom_type_script = "uid://t8352e0s4w8b"

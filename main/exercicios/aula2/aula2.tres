@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="AulaRes" format=3 uid="uid://dsrk0slwiigd6"]
+
+[ext_resource type="Script" uid="uid://t8352e0s4w8b" path="res://main/exercicios/exercicio_res.gd" id="1_piks6"]
+[ext_resource type="Resource" uid="uid://tlqjbahbigj1" path="res://main/exercicios/aula2/aula2_exercicio_fsm.tres" id="2_osjnt"]
+[ext_resource type="Script" uid="uid://bn0bxsit4llqp" path="res://main/exercicios/aula_res.gd" id="3_5rf6g"]
+
+[resource]
+script = ExtResource("3_5rf6g")
+titulo = "Aula 2 - FSM"
+sub_titulo = "Finite State Machine"
+cenas_exercicios = Array[ExtResource("1_piks6")]([ExtResource("2_osjnt")])
+metadata/_custom_type_script = "uid://bn0bxsit4llqp"

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ExercicioRes" format=3 uid="uid://cq0qaevqjorb4"]
+
+[ext_resource type="PackedScene" uid="uid://7u7yjljg7crq" path="res://aulas/aula3/Ex_fsm_bt.tscn" id="1_a1qpq"]
+[ext_resource type="Script" uid="uid://t8352e0s4w8b" path="res://main/exercicios/exercicio_res.gd" id="2_3uamh"]
+
+[resource]
+script = ExtResource("2_3uamh")
+nome = "Mercador e Guarda"
+cena = ExtResource("1_a1qpq")
+metadata/_custom_type_script = "uid://t8352e0s4w8b"

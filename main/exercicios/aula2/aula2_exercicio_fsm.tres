@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ExercicioRes" format=3 uid="uid://tlqjbahbigj1"]
+
+[ext_resource type="PackedScene" uid="uid://vm5apul65gpe" path="res://aulas/aula2/Ex_fsm.tscn" id="1_p7auj"]
+[ext_resource type="Script" uid="uid://t8352e0s4w8b" path="res://main/exercicios/exercicio_res.gd" id="2_e0sk7"]
+
+[resource]
+script = ExtResource("2_e0sk7")
+nome = "Batalha de FSM"
+cena = ExtResource("1_p7auj")
+metadata/_custom_type_script = "uid://t8352e0s4w8b"
