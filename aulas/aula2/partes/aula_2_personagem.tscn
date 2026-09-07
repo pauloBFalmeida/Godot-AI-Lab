@@ -9,6 +9,7 @@ resource_local_to_scene = true
 size = Vector3(0.15, 1, 0.15)
 
 [node name="Personagem" unique_id=1405902387 instance=ExtResource("1_orb4b")]
+collision_layer = 17
 script = ExtResource("2_8xd02")
 patrulhar_distancia_spawn = 20
 fugir_threshold_vida = 40

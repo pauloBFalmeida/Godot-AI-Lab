@@ -11,6 +11,7 @@ resource_local_to_scene = true
 size = Vector3(0.15, 1, 0.15)
 
 [node name="Jogador" unique_id=1405902387 instance=ExtResource("1_1br55")]
+collision_layer = 33
 script = ExtResource("2_5o4jg")
 velocidade = 5.0
 velocidade_salto = 4.5
@@ -19,5 +20,5 @@ cor_personagem = Color(0.3882353, 0.3764706, 0.3647059, 1)
 [node name="MeshInstance3D" parent="Corpo" parent_id_path=PackedInt32Array(565524857) index="0" unique_id=1243407999]
 surface_material_override/0 = SubResource("StandardMaterial3D_5o4jg")
 
-[node name="MeshBastao" parent="MaoBastao" parent_id_path=PackedInt32Array(1567190570) index="0" unique_id=13564532]
+[node name="MeshBastao" parent="Corpo/MaoBastao" parent_id_path=PackedInt32Array(1567190570) index="0" unique_id=13564532]
 mesh = SubResource("BoxMesh_5o4jg")

@@ -11,6 +11,7 @@ resource_local_to_scene = true
 size = Vector3(0.15, 1, 0.15)
 
 [node name="PersonagemMercador" unique_id=1405902387 instance=ExtResource("1_l64xm")]
+collision_layer = 17
 script = ExtResource("2_u17q1")
 cerebro = "BT"
 velocidade = 5.0

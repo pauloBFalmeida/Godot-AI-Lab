@@ -77,6 +77,15 @@ acao_2={
 ]
 }
 
+[layer_names]
+
+3d_physics/layer_1="Tudo"
+3d_physics/layer_2="Chao"
+3d_physics/layer_3="Cenario"
+3d_physics/layer_4="Objetos"
+3d_physics/layer_5="Personagens"
+3d_physics/layer_6="Jogador"
+
 [physics]
 
 3d/physics_engine="Jolt Physics"
