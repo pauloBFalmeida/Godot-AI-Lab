@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://bmea56nrvjshv"]
+
+[ext_resource type="Script" uid="uid://cdxacdxs0r27c" path="res://aulas/aula_extra/AStarGrid/partes/grid_tiles.gd" id="1_hnq31"]
+[ext_resource type="PackedScene" uid="uid://cvnlhg1cifyma" path="res://aulas/aula_extra/AStarGrid/partes/tile_mesh.tscn" id="2_l05co"]
+
+[node name="GridTiles" type="Node3D" unique_id=1117744641]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.01, 0)
+script = ExtResource("1_hnq31")
+tile_base = ExtResource("2_l05co")

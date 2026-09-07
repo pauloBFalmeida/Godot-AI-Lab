@@ -16,13 +16,15 @@ func _ready() -> void:
 	material = mat.duplicate()
 	mesh.set_surface_override_material(0, material)
 	# 
-	set_texto("")
+	clear_texto()
 
 func trocar_cor(cor: Color) -> void:
 	material.albedo_color = cor
 
 func set_texto(texto: String) -> void:
+	label_3d.show()
 	label_3d.text = texto
 
 func clear_texto() -> void:
+	label_3d.hide()
 	label_3d.text = ""
