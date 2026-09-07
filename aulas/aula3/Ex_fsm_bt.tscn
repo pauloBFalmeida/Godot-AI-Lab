@@ -43,13 +43,13 @@ Q - Rouba
 WASD - Move
 Espaço - Pula"
 
-[node name="ShapeCastAtaque" type="ShapeCast3D" parent="JogadorComCamera/Jogador" index="7" unique_id=1469545670]
+[node name="ShapeCastAtaque" type="ShapeCast3D" parent="JogadorComCamera/Jogador" index="6" unique_id=1469545670]
 enabled = false
 shape = SubResource("SphereShape3D_28xmo")
 target_position = Vector3(0, 1, -2.5)
 debug_shape_custom_color = Color(0.89784014, 0, 0.096936174, 1)
 
-[node name="LabelRoubado" type="Label3D" parent="JogadorComCamera/Jogador" index="8" unique_id=1461391388]
+[node name="LabelRoubado" type="Label3D" parent="JogadorComCamera/Jogador" index="7" unique_id=1461391388]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.4, 0)
 modulate = Color(0.7607843, 0, 1, 1)
 text = "Roubado"

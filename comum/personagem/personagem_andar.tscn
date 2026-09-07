@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://bwrvtw1xiwb43"]
+
+[ext_resource type="PackedScene" uid="uid://b6ypxm1fkqw11" path="res://comum/personagem/personagem.tscn" id="1_s5u76"]
+[ext_resource type="Script" uid="uid://bvwlqjkv6w4js" path="res://comum/personagem/personagem_andar.gd" id="2_83j3j"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_83j3j"]
+resource_local_to_scene = true
+size = Vector3(0.15, 1, 0.15)
+
+[node name="PersonagemAndar" unique_id=1405902387 instance=ExtResource("1_s5u76")]
+script = ExtResource("2_83j3j")
+velocidade = 5.0
+
+[node name="MeshBastao" parent="Corpo/MaoBastao" parent_id_path=PackedInt32Array(1567190570) index="0" unique_id=13564532]
+mesh = SubResource("BoxMesh_83j3j")
