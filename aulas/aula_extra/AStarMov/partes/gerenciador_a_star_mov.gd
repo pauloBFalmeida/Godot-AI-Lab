@@ -15,7 +15,7 @@ extends Node
 @onready var obstaculos: Node3D = $"../Obstaculos"
 @onready var spin_box_qtd_esferas: SpinBox = $SpinBoxQtdEsferas
 
-var a_star := AStar_2D.new()
+var a_star := AStarGrid.new()
 
 var tiles_esta_colidindo : Dictionary[TileShapeCast, bool] = {}
 var tiles_posicao_grid : Dictionary[TileShapeCast, Vector2i] = {}

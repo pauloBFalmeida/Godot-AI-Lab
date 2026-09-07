@@ -22,7 +22,7 @@ extends Node
 @onready var spin_box_lateral: SpinBox = $Ajustes/SpinBoxLateral
 @onready var spin_box_diagonal: SpinBox = $Ajustes/SpinBoxDiagonal
 
-var a_star: AStar_2D = AStar_2D.new()
+var a_star: AStarGrid = AStarGrid.new()
 
 enum Opcao{
 	VAZIO		= 0,
@@ -132,7 +132,7 @@ func _executar_A_Star() -> void:
 	if not mostrar_valores: return
 		
 	var valores_f : Array = a_star.posicoes_nodos.values().map(
-		func(nodo: AStar_2D.AStarNodo2D) -> int:
+		func(nodo: AStarGrid.AStarNodoGrid) -> int:
 			var f := nodo.f
 			return f if f < 1000 else -1
 	)
@@ -152,7 +152,7 @@ func _executar_A_Star() -> void:
 			tile.clear_texto()
 			continue
 		if a_star.posicoes_nodos.has(pos):
-			var nodo: AStar_2D.AStarNodo2D = a_star.posicoes_nodos[pos]
+			var nodo: AStarGrid.AStarNodoGrid = a_star.posicoes_nodos[pos]
 			var g := nodo.g
 			var f := nodo.f
 			var h := a_star.distancia(nodo, nodo_fim)

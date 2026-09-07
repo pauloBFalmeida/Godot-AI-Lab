@@ -1,8 +1,8 @@
-class_name AStar_2D
+class_name AStarGrid
 extends AStar
 
 ## Dicionario para dada posicao (Vector2i) retorna o nodo presente em todos_nodos, com a dada posicao
-var posicoes_nodos : Dictionary[Vector2i, AStarNodo2D] = {}
+var posicoes_nodos : Dictionary[Vector2i, AStarNodoGrid] = {}
 
 var distancia_lateral : int = 1
 var distancia_diagonal: int = 2
@@ -16,16 +16,16 @@ func ajustar_nodos(todas_posicoes_validas: Array[Vector2i]) -> void:
 	posicoes_nodos.clear()
 	# para cada possicao valida passada, crie um nodo e guarde a posicao desse nodo
 	for pos: Vector2i in todas_posicoes_validas:
-		var nodo:= AStarNodo2D.new(pos)
+		var nodo:= AStarNodoGrid.new(pos)
 		todos_nodos.append(nodo)
 		posicoes_nodos[pos] = nodo
 	# para cada nodo, gere os possiveis vizinhos, e guarde como as conexoes
-	for nodo: AStarNodo2D in todos_nodos:
+	for nodo: AStarNodoGrid in todos_nodos:
 		var vizinho_pos_dist : Dictionary[Vector2i, int] = get_posicao_vizinhos_dist(nodo.posicao)
 		for vizinho_pos : Vector2i in vizinho_pos_dist.keys():
 			# se existe nodo com essa posicao, entao salve a conexao
 			if posicoes_nodos.has(vizinho_pos):
-				var nodo_vizinho: AStarNodo2D = posicoes_nodos[vizinho_pos]
+				var nodo_vizinho: AStarNodoGrid = posicoes_nodos[vizinho_pos]
 				# peso da conexao, depende se for lateral ou diagonal
 				var peso_conexao: int =  vizinho_pos_dist[vizinho_pos]
 				# adiciona a conexao no nodo
@@ -43,14 +43,14 @@ func A_Star_2D(inicio_pos: Vector2i, fim_pos: Vector2i) -> Array[Vector2i]:
 	if not posicoes_nodos.has(fim_pos): return []
 	
 	# pega o nodo de todos os nodos, referente a posicao de inicio e fim
-	var nodo_inicio : AStarNodo2D = posicoes_nodos[inicio_pos]
-	var nodo_fim : AStarNodo2D = posicoes_nodos[fim_pos]
+	var nodo_inicio : AStarNodoGrid = posicoes_nodos[inicio_pos]
+	var nodo_fim : AStarNodoGrid = posicoes_nodos[fim_pos]
 	
 	# executa o A Star
 	var caminho_nodos : Array = A_Star(nodo_inicio, nodo_fim)
 	
-	# converte de Array para Array[AStarNodo2D]
-	var caminho_nodos_2d : Array[AStarNodo2D] = []
+	# converte de Array para Array[AStarNodoGrid]
+	var caminho_nodos_2d : Array[AStarNodoGrid] = []
 	caminho_nodos_2d.assign(caminho_nodos)
 	
 	# transforma o caminho de AstarNodo em Vector2i
@@ -94,13 +94,13 @@ func get_posicao_vizinhos_dist(posicao: Vector2i) -> Dictionary[Vector2i, int]:
 		posicoes_dist[pos] = distancia_diagonal
 	return posicoes_dist
 
-func caminho_nodos_para_posicoes(caminho_nodos: Array[AStarNodo2D]) -> Array[Vector2i]:
+func caminho_nodos_para_posicoes(caminho_nodos: Array[AStarNodoGrid]) -> Array[Vector2i]:
 	var caminho_2d: Array[Vector2i] = []
-	for nodo : AStarNodo2D in caminho_nodos:
+	for nodo : AStarNodoGrid in caminho_nodos:
 		caminho_2d.append( nodo.posicao )
 	return caminho_2d
 
-class AStarNodo2D:
+class AStarNodoGrid:
 	extends AStar.AStarNodo
 	
 	var posicao: Vector2i
